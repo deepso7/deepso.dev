@@ -19,7 +19,7 @@ const Welcome = () => {
       </Title>
       <Text color="dimmed" align="center" size="lg" sx={{ maxWidth: 580 }} mx="auto" mt="xl">
         Full Stack Developer, working at{' '}
-        <Anchor href="https://huddle01.com" size="lg">
+        <Anchor href="https://huddle01.com" size="lg" target="_blank">
           Huddle01
         </Anchor>
       </Text>
