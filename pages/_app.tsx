@@ -5,7 +5,7 @@ import { getCookie, setCookies } from 'cookies-next';
 import Head from 'next/head';
 import { MantineProvider, ColorScheme, ColorSchemeProvider, Container } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
-import Header from '../components/Header';
+import Header from '../components/NavBar';
 import '../styles/globals.css';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
