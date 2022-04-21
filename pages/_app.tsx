@@ -7,6 +7,7 @@ import { MantineProvider, ColorScheme, ColorSchemeProvider, Container } from '@m
 import { NotificationsProvider } from '@mantine/notifications';
 import Header from '../components/NavBar';
 import '../styles/globals.css';
+import Footer from '../components/Footer';
 
 export default function App(props: AppProps & { colorScheme: ColorScheme }) {
   const { Component, pageProps } = props;
@@ -32,6 +33,7 @@ export default function App(props: AppProps & { colorScheme: ColorScheme }) {
             <Container size="md">
               <Header />
               <Component {...pageProps} />
+              <Footer />
             </Container>
           </NotificationsProvider>
         </MantineProvider>
