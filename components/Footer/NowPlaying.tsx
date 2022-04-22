@@ -9,35 +9,39 @@ import { NowPlayingSong } from 'lib/types';
 const NowPlaying = () => {
   const { data } = useSWR<NowPlayingSong>('/api/spotify/now-playing', fetcher);
   return (
-    <Container className="flex space-x-4 items-center">
+    <Container className="flex flex-row-reverse items-center sm:flex-row sm:space-x-2 w-full">
       {data?.albumImageUrl ? (
         <Image
           src={data.albumImageUrl}
-          height={30}
-          width={30}
+          height={45}
+          width={45}
           alt={data.album}
           className="rounded"
         />
       ) : (
-        <Image src="/logos/spotify.png" height={30} width={30} alt="Spotify" />
+        <Image src="/logos/spotify.png" height={45} width={45} alt="Spotify" />
       )}
-      {data?.songUrl ? (
-        <Anchor
-          href={data.songUrl}
-          target="_blank"
-          variant="text"
-          transform="capitalize"
-          className="hover:underline font-semibold"
-        >
-          {data.title}
-        </Anchor>
-      ) : (
-        <Text size="md">Not Playing</Text>
-      )}
-      <Text size="md">-</Text>
-      <Text size="md" transform="capitalize">
-        {data?.artist ?? 'Spotify'}
-      </Text>
+      <Container className="inline-flex flex-col sm:flex-row w-full max-w-full truncate">
+        {data?.songUrl ? (
+          <Anchor
+            href={data.songUrl}
+            target="_blank"
+            variant="text"
+            transform="capitalize"
+            className="hover:underline font-semibold max-w-max truncate"
+          >
+            {data.title}
+          </Anchor>
+        ) : (
+          <Text size="md">Not Playing</Text>
+        )}
+        <Text size="md" className="mx-2 hidden sm:block">
+          -
+        </Text>
+        <Text size="md" transform="capitalize" className="max-w-max truncate">
+          {data?.artist ?? 'Spotify'}
+        </Text>
+      </Container>
     </Container>
   );
 };
