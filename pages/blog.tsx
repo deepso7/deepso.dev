@@ -1,7 +1,9 @@
+import { ScrollArea } from '@mantine/core';
+
 export default function HomePage() {
   return (
     <>
-      <div>Blog</div>
+      <ScrollArea style={{ height: 700 }}>{/* ... content */}</ScrollArea>
     </>
   );
 }
