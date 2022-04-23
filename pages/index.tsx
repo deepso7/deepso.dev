@@ -1,15 +1,25 @@
-import { ScrollArea } from '@mantine/core';
+import { Container, Text, Title } from '@mantine/core';
 import Welcome from 'components/Welcome/Welcome';
+import BlogPostCards from '../components/BlogPostCards';
 
 export default function HomePage() {
   return (
     <>
       <Welcome />
       <br />
-      {/* TODO: Make this responsive */}
-      <ScrollArea className="lg:h-[500px] min-h-[200px]" type="scroll">
-        {/* ... content */}
-      </ScrollArea>
+      <Container>
+        <Title align="center" mb={20}>
+          <Text
+            className="font-bold text-2xl md:text-4xl tracking-tight"
+            component="span"
+            variant="gradient"
+            gradient={{ from: '#dd83ad', to: '#c3e1fc', deg: 45 }}
+          >
+            Favourite Blogs
+          </Text>
+        </Title>
+        <BlogPostCards />
+      </Container>
     </>
   );
 }
