@@ -39,7 +39,7 @@ const NavBar = () => {
   };
 
   return (
-    <Header height={50} mt="md">
+    <Header height={50} mt="md" mb={80}>
       <Group position="right">
         <Tabs position="right" variant="pills" active={activeTab} onTabChange={onChange}>
           <Tabs.Tab label="Home" tabKey={TabKey.Home} />

@@ -19,7 +19,7 @@ const NowPlaying = () => {
           className="rounded"
         />
       ) : (
-        <Image src="/logos/spotify.png" height={45} width={45} alt="Spotify" />
+        <Image src="/logos/spotify.png" height={40} width={40} alt="Spotify" />
       )}
       <Container className="inline-flex flex-col sm:flex-row w-full max-w-full truncate">
         {data?.songUrl ? (

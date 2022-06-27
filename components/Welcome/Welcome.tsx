@@ -1,30 +1,29 @@
-import { Title, Text, Anchor } from '@mantine/core';
-import useStyles from './Welcome.styles';
+import { Title, Text, Anchor, Container, Grid, Center } from '@mantine/core';
+import Image from 'next/image';
 
-const Welcome = () => {
-  const { classes } = useStyles();
-
-  return (
-    <>
-      <Title className={classes.title} align="center" mt={100}>
-        Deepanshu{' '}
-        <Text
-          inherit
-          variant="gradient"
-          component="span"
-          gradient={{ from: '#f7ba2c', to: '#ea5459', deg: 45 }}
-        >
-          Singh
-        </Text>
-      </Title>
-      <Text color="dimmed" align="center" size="lg" sx={{ maxWidth: 580 }} mx="auto" mt="xl">
-        Full Stack Developer, working at{' '}
-        <Anchor href="https://huddle01.com" size="lg" target="_blank">
-          Huddle01
-        </Anchor>
-      </Text>
-    </>
-  );
-};
+const Welcome = () => (
+  <>
+    <Container>
+      <Center>
+        <Grid align="center">
+          <Grid.Col span={4}>
+            <Image src="/pfp.png" height={100} width={100} />
+          </Grid.Col>
+          <Grid.Col span={8}>
+            <Title className="font-bold text-3xl md:text-5xl tracking-tight mb-1">
+              Deepanshu Singh
+            </Title>
+            <Text color="dimmed">
+              Full Stack Developer, working at{' '}
+              <Anchor href="https://huddle01.com" size="lg" target="_blank">
+                Huddle01
+              </Anchor>
+            </Text>
+          </Grid.Col>
+        </Grid>
+      </Center>
+    </Container>
+  </>
+);
 
 export default Welcome;
