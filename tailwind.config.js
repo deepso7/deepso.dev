@@ -5,7 +5,17 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      inter: ["Inter", "sans-serif"],
+      rotterin: ["rotterin", "Cedarville Cursive", "cursive"],
+    },
+    extend: {
+      colors: {
+        custom: {
+          black: "#202020",
+        },
+      },
+    },
   },
   plugins: [],
 };
