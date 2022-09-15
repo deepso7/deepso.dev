@@ -1,13 +1,4 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
-
-module.exports = withBundleAnalyzer({
+/** @type {import('next').NextConfig} */
+module.exports = {
   reactStrictMode: true,
-  images: {
-    domains: ['i.scdn.co'],
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-});
+}
