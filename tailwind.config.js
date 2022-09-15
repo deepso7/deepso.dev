@@ -13,6 +13,7 @@ module.exports = {
       colors: {
         custom: {
           black: "#202020",
+          sky1: "#F6F6F6",
         },
       },
     },
