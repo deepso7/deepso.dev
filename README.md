@@ -1,27 +1,27 @@
-# Personal website
+# Next.js + Tailwind CSS Example
 
-visit https://deepso.dev
+This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
 
-## yarn scripts
+## Deploy your own
 
-### Build and dev scripts
+Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
 
-- `dev` – start dev server
-- `build` – bundle application for production
-- `export` – exports static website to `out` folder
-- `analyze` – analyzes application bundle with [@next/bundle-analyzer](https://www.npmjs.com/package/@next/bundle-analyzer)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
 
-### Testing scripts
+## How to use
 
-- `typecheck` – checks TypeScript types
-- `lint` – runs ESLint
-- `prettier:check` – checks files with Prettier
-- `jest` – runs jest tests
-- `jest:watch` – starts jest watch
-- `test` – runs `jest`, `prettier:check`, `lint` and `typecheck` scripts
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
 
-### Other scripts
+```bash
+npx create-next-app --example with-tailwindcss with-tailwindcss-app
+```
 
-- `storybook` – starts storybook dev server
-- `storybook:build` – build production storybook bundle to `storybook-static`
-- `prettier:write` – formats all files with Prettier
+```bash
+yarn create next-app --example with-tailwindcss with-tailwindcss-app
+```
+
+```bash
+pnpm create next-app --example with-tailwindcss with-tailwindcss-app
+```
+
+Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
