@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       inter: ["Inter", "sans-serif"],
-      rotterin: ["rotterin", "Cedarville Cursive", "cursive"],
+      rotterin: ["rotterin", "Cedarville Cursive", "cursive", "serif"],
     },
     extend: {
       colors: {

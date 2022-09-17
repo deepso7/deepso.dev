@@ -10,3 +10,7 @@
   font-family: "rotterin";
   src: url("/fonts/rotterin.ttf");
 }
+
+body {
+  font-family: inter;
+}
