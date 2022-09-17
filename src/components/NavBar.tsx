@@ -4,6 +4,7 @@ import NextLink from "next/link";
 import cn from "classnames";
 
 import { Github, Twitter } from "./Icons";
+import MobileMenu from "./MobileMenu";
 
 const ExternalLink: FC<{ href: string; children: ReactNode }> = ({
   href,
@@ -66,6 +67,9 @@ const NavBar: FC = () => {
           <ExternalLink href="https://twitter.com/deepso7">
             <Twitter />
           </ExternalLink>
+          <div className="md:hidden">
+            <MobileMenu />
+          </div>
         </div>
       </nav>
     </div>
