@@ -6,6 +6,12 @@ import cn from "classnames";
 import { Github, Twitter } from "./Icons";
 import MobileMenu from "./MobileMenu";
 
+const NavObj = [
+  { href: "/", text: "Home" },
+  { href: "/blog", text: "Blog" },
+  { href: "/snippet", text: "Snippet" },
+];
+
 const ExternalLink: FC<{ href: string; children: ReactNode }> = ({
   href,
   children,
@@ -37,12 +43,6 @@ const NavItem: FC<{ href: string; text: string }> = ({ href, text }) => {
     </NextLink>
   );
 };
-
-const NavObj = [
-  { href: "/", text: "Home" },
-  { href: "/blog", text: "Blog" },
-  { href: "/snippet", text: "Snippet" },
-];
 
 const NavBar: FC = () => {
   return (
