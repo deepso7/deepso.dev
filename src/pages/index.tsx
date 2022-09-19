@@ -1,21 +1,37 @@
 import type { NextPage } from "next";
+import NextImage from "next/future/image";
 import NavBar from "../components/NavBar";
 
 const Home: NextPage = () => (
   <div className="">
     <NavBar />
     <div className="mx-auto max-w-4xl px-6 md:py-14">
-      <h1 className="bg-gradient-to-r from-[#FFDBFB] via-[#B28DFF] to-[#AEC0FF] bg-clip-text font-rotterin text-4xl text-transparent md:text-7xl">
-        Deepanshu Singh
-      </h1>
-      <h2 className="py-3 text-sm md:px-2 md:text-xl">
-        <span className="text-[#D1D2D3]">Lead Developer at </span>
-        <span className="font-extrabold text-[#E6E6E6]">
-          <a href="https://huddle01.com/" target="_blank">
-            Huddle01
-          </a>
-        </span>
-      </h2>
+      <div className="flex w-full items-center justify-between gap-12">
+        <div className="max-w-xl">
+          <h1 className="bg-gradient-to-r from-[#FFDBFB] via-[#B28DFF] to-[#AEC0FF] bg-clip-text pb-2 font-rotterin text-4xl text-transparent md:text-7xl">
+            Deepanshu Singh
+          </h1>
+          <h2 className="py-1 text-sm md:px-2 md:text-xl">
+            <span className="text-[#D1D2D3]">Lead Developer at </span>
+            <span className="font-extrabold text-[#E6E6E6]">
+              <a href="https://huddle01.com/" target="_blank">
+                Huddle01
+              </a>
+            </span>
+          </h2>
+          <p className="text-sm text-[#D1D2D3] md:px-2 md:text-base">
+            Experienced Back End Developer with a demonstrated history of
+            working in the internet industry. Skilled in Back-End Web
+            Development, Computer Security, JavaScript, NoSQL, Python, Django,
+            and Node.js. Strong engineering professional with pursuing Bachelor
+            of Technology - BTech focused on Cyber/Computer Forensics and
+            Counterterrorism from VIT Bhopal University.
+          </p>
+        </div>
+        <div className="">
+          <NextImage src="/hero.png" alt="hero" width={300} height={300} />
+        </div>
+      </div>
     </div>
   </div>
 );
