@@ -5,8 +5,8 @@ import NavBar from "../components/NavBar";
 const Home: NextPage = () => (
   <div className="">
     <NavBar />
-    <div className="mx-auto max-w-4xl px-6 md:py-14">
-      <div className="flex w-full items-center justify-between gap-12">
+    <div className="mx-auto max-w-4xl px-6 py-6 md:py-14">
+      <div className=" flex w-full flex-col-reverse items-start md:flex-row md:items-center md:justify-between md:gap-12">
         <div className="max-w-xl">
           <h1 className="bg-gradient-to-r from-[#FFDBFB] via-[#B28DFF] to-[#AEC0FF] bg-clip-text pb-2 font-rotterin text-4xl text-transparent md:text-7xl">
             Deepanshu Singh
@@ -22,14 +22,20 @@ const Home: NextPage = () => (
           <p className="text-sm text-[#D1D2D3] md:px-2 md:text-base">
             Experienced Back End Developer with a demonstrated history of
             working in the internet industry. Skilled in Back-End Web
-            Development, Computer Security, JavaScript, NoSQL, Python, Django,
-            and Node.js. Strong engineering professional with pursuing Bachelor
-            of Technology - BTech focused on Cyber/Computer Forensics and
-            Counterterrorism from VIT Bhopal University.
+            Development, Computer Security, Typescript, and Node.js. Strong
+            engineering professional with pursuing Bachelor of Technology -
+            BTech focused on Cyber/Computer Forensics and Counterterrorism from
+            VIT Bhopal University.
           </p>
         </div>
-        <div className="">
-          <NextImage src="/hero.png" alt="hero" width={300} height={300} />
+        <div className="w-40 md:w-[300px]">
+          <NextImage
+            src="/hero.png"
+            alt="hero"
+            width={300}
+            height={300}
+            className="select-none object-contain"
+          />
         </div>
       </div>
     </div>
