@@ -1,23 +1,25 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import { type NextRequest } from "next/server";
 import { getTopTracks } from "lib/spotify";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const response = await getTopTracks();
-  const data = await response.json();
+export const config = {
+  runtime: "experimental-edge",
+};
 
-  const tracks = data.items?.slice(0, 10).map((track: any) => ({
+export default async function handler(req: NextRequest) {
+  const response = await getTopTracks();
+  const { items } = await response.json();
+
+  const tracks = items.slice(0, 10).map((track: any) => ({
     artist: track.artists.map((_artist: any) => _artist.name).join(", "),
     songUrl: track.external_urls.spotify,
     title: track.name,
   }));
 
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=86400, stale-while-revalidate=43200"
-  );
-
-  return res.status(200).json({ tracks });
+  return new Response(JSON.stringify({ tracks }), {
+    status: 200,
+    headers: {
+      "content-type": "application/json",
+      "cache-control": "public, s-maxage=86400, stale-while-revalidate=43200",
+    },
+  });
 }
