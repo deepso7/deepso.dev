@@ -6,10 +6,10 @@ import cn from "classnames";
 import { Github, Twitter } from "./Icons";
 import MobileMenu from "./MobileMenu";
 
-const NavObj = [
+export const NavObj = [
   { href: "/", text: "Home" },
   { href: "/blog", text: "Blog" },
-  { href: "/snippet", text: "Snippet" },
+  { href: "/snippet", text: "Snippet", disabled: true },
 ];
 
 const ExternalLink: FC<{ href: string; children: ReactNode }> = ({

@@ -1,93 +1,82 @@
-import cn from "classnames";
+import { FC, Fragment, ReactNode, useState } from "react";
 import Link from "next/link";
-import useDelayedRender from "use-delayed-render";
-import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { Menu, Transition } from "@headlessui/react";
+import cn from "classnames";
+
+import { NavObj } from "./NavBar";
 import styles from "styles/mobile-menu.module.css";
 
-export default function MobileMenu() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
-    isMenuOpen,
-    {
-      enterDelay: 20,
-      exitDelay: 300,
-    }
+const MobileMenu = () => {
+  return (
+    <Menu as="div" className="relative inline-block text-left">
+      <div>
+        <Menu.Button
+          className={cn(
+            styles.burger,
+            "inline-flex justify-center rounded-md border border-zinc-700 text-sm font-medium shadow-sm  transition-all hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-[#F6F6F6] focus:ring-offset-2 focus:ring-offset-gray-100"
+          )}
+          aria-label="menu"
+        >
+          {({ open }) => (
+            <>
+              <MenuIcon data-hide={open} />
+              <CrossIcon data-hide={!open} />
+            </>
+          )}
+        </Menu.Button>
+      </div>
+
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-zinc-700 rounded-md border border-zinc-700 bg-zinc-800 shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <div className="py-1">
+            {NavObj.map(item => (
+              <DropdownMenuItem href={item.href} disabled={item.disabled}>
+                {item.text}
+              </DropdownMenuItem>
+            ))}
+          </div>
+        </Menu.Items>
+      </Transition>
+    </Menu>
   );
+};
 
-  function toggleMenu() {
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-      document.body.style.overflow = "";
-    } else {
-      setIsMenuOpen(true);
-      document.body.style.overflow = "hidden";
-    }
-  }
+type Props = {
+  href: string;
+  disabled?: boolean;
+  children: ReactNode;
+};
 
-  useEffect(() => {
-    return function cleanup() {
-      document.body.style.overflow = "";
-    };
-  }, []);
+const DropdownMenuItem: FC<Props> = ({ href, disabled = false, children }) => {
+  const router = useRouter();
+  const active = router.asPath === href;
 
   return (
-    <>
-      <button
-        className={cn(styles.burger, "visible md:hidden")}
-        aria-label="Toggle menu"
-        type="button"
-        onClick={toggleMenu}
-      >
-        <MenuIcon data-hide={isMenuOpen} />
-        <CrossIcon data-hide={!isMenuOpen} />
-      </button>
-      {isMenuMounted && (
-        <ul
+    <Menu.Item disabled={disabled}>
+      <Link href={href}>
+        <a
           className={cn(
-            styles.menu,
-            "absolute flex flex-col bg-gray-100 dark:bg-gray-900",
-            isMenuRendered && styles.menuRendered
+            active ? "bg-orange-200 dark:bg-zinc-700" : "",
+            "block px-4 py-2 text-sm text-[#F6F6F6]"
           )}
         >
-          <li
-            className="border-b border-gray-300 text-sm font-semibold text-gray-900 dark:border-gray-700 dark:text-gray-100"
-            style={{ transitionDelay: "150ms" }}
-          >
-            <Link href="/">
-              <a className="ml-auto pb-4">Home</a>
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 text-sm font-semibold text-gray-900 dark:border-gray-700 dark:text-gray-100"
-            style={{ transitionDelay: "175ms" }}
-          >
-            <Link href="/blog">
-              <a className="flex w-auto pb-4">Blog</a>
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 text-sm font-semibold text-gray-900 dark:border-gray-700 dark:text-gray-100"
-            style={{ transitionDelay: "200ms" }}
-          >
-            <Link href="/snippet">
-              <a className="flex w-auto pb-4">Snippet</a>
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 text-sm font-semibold text-gray-900 dark:border-gray-700 dark:text-gray-100"
-            style={{ transitionDelay: "250ms" }}
-          >
-            <Link href="/contact">
-              <a className="flex w-auto pb-4">Contact</a>
-            </Link>
-          </li>
-        </ul>
-      )}
-    </>
+          {children}
+        </a>
+      </Link>
+    </Menu.Item>
   );
-}
+};
 
-function MenuIcon(props: JSX.IntrinsicElements["svg"]) {
+const MenuIcon = (props: JSX.IntrinsicElements["svg"]) => {
   return (
     <svg
       className="absolute h-5 w-5 text-gray-900 dark:text-gray-100"
@@ -103,9 +92,9 @@ function MenuIcon(props: JSX.IntrinsicElements["svg"]) {
       />
     </svg>
   );
-}
+};
 
-function CrossIcon(props: JSX.IntrinsicElements["svg"]) {
+const CrossIcon = (props: JSX.IntrinsicElements["svg"]) => {
   return (
     <svg
       className="absolute h-5 w-5 text-gray-900 dark:text-gray-100"
@@ -124,4 +113,6 @@ function CrossIcon(props: JSX.IntrinsicElements["svg"]) {
       <path d="M6 6l12 12" />
     </svg>
   );
-}
+};
+
+export default MobileMenu;
