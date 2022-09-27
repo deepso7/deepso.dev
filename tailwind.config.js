@@ -6,7 +6,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      inter: ["Inter", "sans-serif"],
+      inter: ["Roboto", "Inter", "sans-serif"],
       rotterin: ["rotterin", "Cedarville Cursive", "cursive", "serif"],
     },
     extend: {
