@@ -71,6 +71,9 @@ const Home: NextPage = () => (
       </div>
 
       <Subscribe />
+
+      <hr className="bottom-4 w-full border-[#292C35]" />
+      <div className="h-12"></div>
     </div>
   </Container>
 );
