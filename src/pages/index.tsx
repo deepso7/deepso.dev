@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import NextImage from "next/future/image";
+import Button from "../components/Button";
 import Container from "../components/Container";
 import FeatureCard from "../components/FeatureCard";
 
@@ -45,6 +46,7 @@ const Home: NextPage = () => (
         <FeatureCard gradient="from-[#7EAEFF] to-[#FCA6E9]" />
         <FeatureCard gradient="from-[#B0D9FF] to-[#3BB4E1]" />
         <FeatureCard gradient="from-[#E8CDFF] to-[#FFA6AB]" />
+        <Button text="Read all Blogs" />
       </div>
     </div>
   </Container>
