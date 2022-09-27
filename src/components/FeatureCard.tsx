@@ -31,7 +31,7 @@ const FeatureCard: React.FC<{ gradient: string }> = ({ gradient }) => {
   return (
     <GradientContainer
       gradient={gradient}
-      padding="md:px-8 md:pt-6 md:pb-8 px-3 pt-4 pb-4"
+      className="px-3 pt-4 pb-4 md:px-8 md:pt-6 md:pb-8"
     >
       <h3 className="text-2xl font-semibold text-[#E6E6E6]">Title</h3>
       <p className="text-xl text-[#D1D2D3]">

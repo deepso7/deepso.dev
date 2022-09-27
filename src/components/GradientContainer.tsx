@@ -3,10 +3,10 @@ import cn from "classnames";
 const GradientContainer: React.FC<{
   children: React.ReactNode;
   gradient: string;
-  padding: string;
-}> = ({ children, gradient, padding }) => (
+  className: string;
+}> = ({ children, gradient, className }) => (
   <div className={cn("w-full rounded-2xl bg-gradient-to-r p-1", gradient)}>
-    <div className={cn("rounded-xl bg-[#18181C]", padding)}>{children}</div>
+    <div className={cn("rounded-xl bg-[#18181C]", className)}>{children}</div>
   </div>
 );
 
