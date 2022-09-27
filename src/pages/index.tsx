@@ -1,9 +1,11 @@
 import type { NextPage } from "next";
 import NextImage from "next/future/image";
+
 import Button from "../components/Button";
 import Container from "../components/Container";
 import FeatureCard from "../components/FeatureCard";
 import SnippetCard from "../components/SnippetCard";
+import Subscribe from "../components/Subscribe";
 
 const Home: NextPage = () => (
   <Container>
@@ -67,6 +69,8 @@ const Home: NextPage = () => (
         </div>
         <Button text="View all Snippets" />
       </div>
+
+      <Subscribe />
     </div>
   </Container>
 );
