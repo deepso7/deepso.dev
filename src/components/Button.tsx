@@ -14,8 +14,8 @@ const Arrow = () => (
 );
 
 const Button: React.FC<{ text: string }> = ({ text }) => (
-  <button className="pr- flex h-14 w-fit items-center rounded-2xl border-2 border-[#374151] px-8 text-[#929497] hover:bg-[#2D3747]">
-    {text}&nbsp;
+  <button className="flex h-14 w-fit items-center gap-5 rounded-2xl border-2 border-[#374151] px-8 text-[#929497] hover:bg-[#2D3747]">
+    {text}
     <Arrow />
   </button>
 );
