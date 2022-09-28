@@ -12,7 +12,7 @@ export const NavObj = [
   { href: "/snippet", text: "Snippet", disabled: true },
 ];
 
-const ExternalLink: FC<{ href: string; children: ReactNode }> = ({
+export const ExternalLink: FC<{ href: string; children: ReactNode }> = ({
   href,
   children,
 }) => (

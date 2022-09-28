@@ -1,11 +1,37 @@
 import useSWR from "swr";
 import NextImage from "next/future/image";
+import NextLink from "next/link";
+import cn from "classnames";
+
 import fetcher from "../lib/fetcher";
+import { ExternalLink, NavObj } from "./NavBar";
+import { Github, Twitter } from "./Icons";
 
 const Footer = () => (
   <footer>
     <hr className="bottom-4 w-full border-[#292C35]" />
     <NowPlaying />
+    <div className="flex items-start justify-between md:items-center">
+      <ul className="mt-2 flex flex-col gap-8 md:flex-row md:gap-12">
+        {NavObj.map(item => (
+          <li key={item.href}>
+            <NextLink href={item.href}>
+              <a className="font-bold text-[#A7A9AC]">
+                <span>{item.text}</span>
+              </a>
+            </NextLink>
+          </li>
+        ))}
+      </ul>
+      <div className="flex items-center gap-8">
+        <ExternalLink href="https://github.com/deepso7">
+          <Github />
+        </ExternalLink>
+        <ExternalLink href="https://twitter.com/deepso7">
+          <Twitter />
+        </ExternalLink>
+      </div>
+    </div>
   </footer>
 );
 
