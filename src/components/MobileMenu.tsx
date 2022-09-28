@@ -39,7 +39,11 @@ const MobileMenu = () => {
         <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-zinc-700 rounded-md border border-zinc-700 bg-zinc-800 shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             {NavObj.map(item => (
-              <DropdownMenuItem href={item.href} disabled={item.disabled}>
+              <DropdownMenuItem
+                href={item.href}
+                disabled={item.disabled}
+                key={item.text}
+              >
                 {item.text}
               </DropdownMenuItem>
             ))}
