@@ -2,6 +2,7 @@ import { FC } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 interface Props {
   children: React.ReactNode;
@@ -46,7 +47,10 @@ const Container: FC<Props> = ({ children, customMeta }) => {
       </Head>
       <NavBar />
       <main>
-        <div className="mx-auto max-w-4xl px-6 py-6 md:py-14">{children}</div>
+        <div className="mx-auto max-w-4xl px-6 py-6 md:py-14">
+          {children}
+          <Footer />
+        </div>
       </main>
     </>
   );
