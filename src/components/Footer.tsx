@@ -1,7 +1,6 @@
 import useSWR from "swr";
 import NextImage from "next/future/image";
 import NextLink from "next/link";
-import cn from "classnames";
 
 import fetcher from "../lib/fetcher";
 import { ExternalLink, NavObj } from "./NavBar";
