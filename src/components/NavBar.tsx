@@ -46,10 +46,10 @@ const NavItem: FC<{ href: string; text: string }> = ({ href, text }) => {
 
 const NavBar: FC = () => {
   return (
-    <div className="bg-[#14141499]">
+    <div className="bg-[#141414]">
       <nav className="relative mx-auto flex w-full max-w-7xl  items-center justify-between py-3 px-8 md:py-8 md:px-16">
         <div className="flex items-center space-x-10">
-          <h1 className="cursor-pointer font-rotterin text-4xl text-custom-sky1">
+          <h1 className="cursor-pointer bg-gradient-to-r from-[#FBFAFF] via-[#B28DFF] to-[#FFFFFF] bg-clip-text font-rotterin text-4xl text-transparent">
             Deepso.dev
           </h1>
           <ul className="mt-2 hidden gap-2 md:flex">

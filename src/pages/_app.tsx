@@ -11,11 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     });
   }, []);
 
-  return (
-    <div className="min-h-screen bg-custom-black">
-      <Component {...pageProps} />
-    </div>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;

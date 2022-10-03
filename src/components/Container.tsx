@@ -46,7 +46,7 @@ const Container: FC<Props> = ({ children, customMeta }) => {
         )}
       </Head>
       <NavBar />
-      <main>
+      <main className="min-h-screen bg-custom-black">
         <div className="mx-auto max-w-4xl px-6 py-6 md:py-14">
           {children}
           <Footer />
