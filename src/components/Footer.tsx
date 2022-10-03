@@ -12,7 +12,7 @@ const Footer = () => (
     <hr className="bottom-4 w-full border-[#292C35]" />
     <NowPlaying />
     <div className="flex items-start justify-between md:items-center">
-      <ul className="mt-2 flex flex-col gap-8 md:flex-row md:gap-12">
+      <ul className="flex flex-col gap-8 md:mt-2 md:flex-row md:gap-12">
         {NavObj.map(item => (
           <li key={item.href}>
             <NextLink href={item.href}>
