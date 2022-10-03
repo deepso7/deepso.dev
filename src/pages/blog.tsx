@@ -4,6 +4,7 @@ import { Combobox, Transition } from "@headlessui/react";
 import cn from "classnames";
 
 import Container from "../components/Container";
+import { Tabs } from "../components/FeatureCard";
 
 const people = [
   { id: 1, name: "Wade Cooper" },
@@ -99,6 +100,18 @@ const Home: NextPage = () => {
           </div>
         </Combobox>
       </div>
+
+      {Array.from(Array(6).keys()).map(() => (
+        <div className="mb-8 rounded-xl bg-[#18181C] py-6 px-8">
+          <h2 className="text-2xl text-[#E6E6E6]">Title</h2>
+          <p className="text-[#D1D2D3]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+            ornare augue sit amet ipsum congue tincidunt. Nam eu ultrices ex,
+            eget dictum odio.
+          </p>
+          <Tabs />
+        </div>
+      ))}
     </Container>
   );
 };

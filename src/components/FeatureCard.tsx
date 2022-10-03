@@ -17,13 +17,14 @@ const tabs = [
   },
 ];
 
-const Tab: React.FC<{
-  Icon: JSX.Element;
-  text: string;
-}> = ({ Icon, text }) => (
-  <div className="flex items-center md:gap-2">
-    {Icon}
-    <span className="text-[#A7A9AC]">{text}</span>
+export const Tabs: React.FC = () => (
+  <div className="mt-8 flex items-center gap-6">
+    {tabs.map(tab => (
+      <div className="flex items-center md:gap-2" key={tab.text}>
+        {tab.Icon}
+        <span className="text-[#A7A9AC]">{tab.text}</span>
+      </div>
+    ))}
   </div>
 );
 
@@ -40,11 +41,7 @@ const FeatureCard: React.FC<{ gradient: string }> = ({ gradient }) => {
         odio.
       </p>
 
-      <div className="mt-8 flex items-center gap-6">
-        {tabs.map(tab => (
-          <Tab Icon={tab.Icon} text={tab.text} key={tab.text} />
-        ))}
-      </div>
+      <Tabs />
     </GradientContainer>
   );
 };
