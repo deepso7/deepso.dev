@@ -18,7 +18,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        "bg-zinc-800 font-sans text-white antialiased",
+        "bg-zinc-800 font-sans text-indigo-50 antialiased",
         fontSans.variable
       )}
     >
@@ -28,6 +28,7 @@ export default function RootLayout({
       */}
       <head />
       <body>
+        <div className="w-full h-2 bg-gradient-to-r from-indigo-500 via-orange-500 to-pink-500" />
         {children}
         <Analytics />
       </body>
