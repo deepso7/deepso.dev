@@ -1,5 +1,5 @@
 const Page = () => {
-  return <h1>Hello, Next.js!</h1>;
+  return <h1 className="font-bold">Deepso</h1>;
 };
 
 export default Page;
