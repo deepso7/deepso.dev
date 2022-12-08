@@ -30,7 +30,7 @@ export default function RootLayout({
       <head />
       <body className="min-h-screen">
         <div className="w-full h-2 bg-gradient-to-r from-indigo-500 via-orange-500 to-pink-500" />
-        <div className="md:w-1/2 mx-auto">
+        <div className="md:w-1/2 mx-auto p-2">
           <Navbar />
           {children}
         </div>
