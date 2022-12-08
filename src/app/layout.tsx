@@ -3,6 +3,7 @@ import { Inter as FontSans } from "@next/font/google";
 
 import { cn } from "@/lib/utils";
 import { Analytics } from "@/components/Analytics";
+import Navbar from "@/components/Navbar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -27,9 +28,12 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
+      <body className="min-h-screen">
         <div className="w-full h-2 bg-gradient-to-r from-indigo-500 via-orange-500 to-pink-500" />
-        {children}
+        <div className="md:w-1/2 mx-auto">
+          <Navbar />
+          {children}
+        </div>
         <Analytics />
       </body>
     </html>
