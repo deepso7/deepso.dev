@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-
 import { useWindowSize } from "usehooks-ts";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 
