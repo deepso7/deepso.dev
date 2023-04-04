@@ -2,7 +2,7 @@ import { geolocation } from "@vercel/edge";
 
 export const config = {
   runtime: "edge",
-  regions: ["bom1", "sfo1"],
+  regions: ["bom1"],
 };
 
 export default function (request: Request) {
