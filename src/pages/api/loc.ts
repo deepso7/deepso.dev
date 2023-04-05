@@ -5,10 +5,13 @@ export const config = {
   regions: ["bom1", "iad1"], // only execute this function on iad1
 };
 
-export default (req: NextRequest) => {
+export default async (req: NextRequest) => {
+  const data = await fetch("https://deepso.dev/api/loc");
+
+  const response = await data.json();
+
   return NextResponse.json({
     geo: req.geo,
-    headers: req.headers,
-    req,
+    response,
   });
 };
