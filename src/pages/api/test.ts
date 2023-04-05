@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export const config = {
-  runtime: "edge", // this is a pre-requisite
-  regions: ["iad1", "bom1"], // only execute this function on iad1
+  runtime: "edge",
 };
 
 export default async (req: NextRequest) => {
