@@ -6,11 +6,14 @@ export const config = {
 };
 
 export default async (req: NextRequest) => {
-  // const data = await fetch("https://deepso.dev/api/loc");
+  const data = await fetch("https://deepso.dev/api/loc");
 
-  // const response = await data.json();
+  const response = await data.json();
+
+  console.log({ response });
 
   return NextResponse.json({
     geo: req.geo,
+    response,
   });
 };
