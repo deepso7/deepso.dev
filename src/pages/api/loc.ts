@@ -1,14 +1,14 @@
-import { geolocation } from "@vercel/edge";
+import { NextRequest, NextResponse } from "next/server";
 
 export const config = {
   runtime: "edge", // this is a pre-requisite
+  regions: ["bom1", "iad1"], // only execute this function on iad1
 };
 
-export default function (request: Request) {
-  const geo = geolocation(request);
-  // You can also get the city using dot notation on the function
-  // const city = geolocation(request).city;
-  return new Response(JSON.stringify(geo), {
-    headers: { "content-type": "application/json" },
+export default (req: NextRequest) => {
+  return NextResponse.json({
+    geo: req.geo,
+    headers: req.headers,
+    req,
   });
-}
+};
