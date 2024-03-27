@@ -2,11 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Deepso">
-  <main class="vertical space-y-4">
-    <h1 class="text-lg text-slate-100">Deepso.</h1>
+<Layout>
+  <main class="vertical space-y-4 text-white">
+    <h1 class="text-xl">Deepso.</h1>
     <ul
-      class="horizontal list-disc space-x-4 text-sm text-white marker:text-xs marker:text-white after:bg-white first:marker:content-['']"
+      class="horizontal list-disc space-x-4 text-sm marker:text-xs marker:text-white first:marker:content-['']"
     >
       <li>
         <a
@@ -36,6 +36,13 @@ import Layout from "../layouts/Layout.astro";
         </a>
       </li>
     </ul>
-    <p class="font-thin text-white">India, Protocol @Huddle01.</p>
+    <p class="text-sm font-thin italic">
+      India, Lead Engineer <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://huddle01.com"
+        >@Huddle01
+      </a>.
+    </p>
   </main>
 </Layout>
