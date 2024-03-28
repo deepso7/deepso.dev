@@ -1,16 +1,18 @@
 ---
 import "../index.css";
+import SpeedInsights from "@vercel/speed-insights/astro";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <title>Deepso</title>
     <meta name="description" content="Engineer, WebRTC, Distributed Systems" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>Deepso</title>
+    <SpeedInsights />
   </head>
   <body class="vertical center bg-black pt-12 font-sans">
     <slot />
