@@ -14,11 +14,11 @@
   }
 
   .horizontal.center-v {
-    @apply items-center
+    @apply items-center;
   }
 
   .horizontal.center-h {
-    @apply justify-center
+    @apply justify-center;
   }
 
   .horizontal.center {
