@@ -1,17 +1,15 @@
 ---
 import "../index.css";
+
+import BaseHead from "../components/base-head.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../constants";
 import SpeedInsights from "@vercel/speed-insights/astro";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Deepso</title>
-    <meta name="description" content="Engineer, WebRTC, Distributed Systems" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <SpeedInsights />
   </head>
   <body class="vertical center bg-black pt-12 font-sans">
