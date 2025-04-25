@@ -1,4 +1,5 @@
 ---
+import { ModeToggle } from '@/components/mode-toggle';
 import { GithubIcon } from '@/components/ui/github';
 import { LinkedinIcon } from '@/components/ui/linkedin';
 import { TwitterIcon } from '@/components/ui/twitter';
@@ -8,7 +9,10 @@ import Layout from '../layouts/layout.astro';
 
 <Layout>
 	<main class="vertical space-y-4">
-		<h1 class="text-xl">Deepso.</h1>
+		<div class="flex items-center space-between">
+			<h1 class="text-xl">Deepso.</h1>
+			<ModeToggle client:load />
+		</div>
 		<p class="text-sm font-thin italic">
 			India, Lead Engineer <a target="_blank" rel="noopener noreferrer" href="https://huddle01.com"
 				>@Huddle01
