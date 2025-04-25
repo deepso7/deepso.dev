@@ -1,50 +1,35 @@
 ---
-import {GithubIcon} from "@/components/ui/github"
-import {LinkedinIcon} from "@/components/ui/linkedin"
-import {TwitterIcon} from "@/components/ui/twitter"
+import { GithubIcon } from '@/components/ui/github';
+import { LinkedinIcon } from '@/components/ui/linkedin';
+import { TwitterIcon } from '@/components/ui/twitter';
 
-import Layout from "../layouts/layout.astro";
+import Layout from '../layouts/layout.astro';
 ---
 
 <Layout>
-  <main class="vertical space-y-4">
-    <h1 class="text-xl">Deepso.</h1>
-    <p class="text-sm font-thin italic">
-      India, Lead Engineer <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://huddle01.com"
-        >@Huddle01
-      </a>.
-    </p>
-    <ul class="horizontal space-x-4">
-      <li>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/deepso7"
-        >
-          <GithubIcon size={20} client:load />
-        </a>
-      </li>
-      <li>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://twitter.com/deepso7"
-        >
-          <TwitterIcon size={20} client:load />
-        </a>
-      </li>
-      <li>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.linkedin.com/in/deepso7"
-        >
-          <LinkedinIcon size={20} client:load />
-        </a>
-      </li>
-    </ul>
-  </main>
+	<main class="vertical space-y-4">
+		<h1 class="text-xl">Deepso.</h1>
+		<p class="text-sm font-thin italic">
+			India, Lead Engineer <a target="_blank" rel="noopener noreferrer" href="https://huddle01.com"
+				>@Huddle01
+			</a>.
+		</p>
+		<ul class="horizontal space-x-4">
+			<li>
+				<a target="_blank" rel="noopener noreferrer" href="https://github.com/deepso7">
+					<GithubIcon size={20} client:load />
+				</a>
+			</li>
+			<li>
+				<a target="_blank" rel="noopener noreferrer" href="https://twitter.com/deepso7">
+					<TwitterIcon size={20} client:load />
+				</a>
+			</li>
+			<li>
+				<a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/deepso7">
+					<LinkedinIcon size={20} client:load />
+				</a>
+			</li>
+		</ul>
+	</main>
 </Layout>

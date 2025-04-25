@@ -1,19 +1,19 @@
 ---
-import "../index.css";
+import '../index.css';
 
-import SpeedInsights from "@vercel/speed-insights/astro";
+import SpeedInsights from '@vercel/speed-insights/astro';
 
-import BaseHead from "../components/base-head.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../constants";
+import BaseHead from '../components/base-head.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../constants';
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <SpeedInsights />
-  </head>
-  <body class="vertical center pt-12">
-    <slot />
-  </body>
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<SpeedInsights />
+	</head>
+	<body class="vertical center pt-12">
+		<slot />
+	</body>
 </html>

@@ -1,9 +1,9 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import "../index.css";
+import '../index.css';
 
-import { Font } from 'astro:assets'
+import { Font } from 'astro:assets';
 
 import { SITE_TITLE } from '../constants';
 
@@ -32,13 +32,12 @@ const { title, description, image = '/cover.svg' } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
-<Font cssVariable='--font-roboto' preload />
+<Font cssVariable="--font-roboto" preload />
 <style>
 	body {
-			font-family: var(--font-roboto);
+		font-family: var(--font-roboto);
 	}
 </style>
-	
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -54,7 +53,7 @@ const { title, description, image = '/cover.svg' } = Astro.props;
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
-<meta property="og:site_name" content="Deepso">
+<meta property="og:site_name" content="Deepso" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />

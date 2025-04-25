@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "biome lint --write .",
-    "lint:fix": "biome check --write ."
+    "lint:fix": "biome check --write .",
+    "format:code": "biome format --write && prettier -w \"**/*\" --ignore-unknown --cache"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.2.5",
@@ -32,6 +33,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
     "tw-animate-css": "^1.2.8",
     "ultracite": "4.2.1"
   }
