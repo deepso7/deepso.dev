@@ -1,10 +1,11 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { motion, useAnimation } from 'motion/react';
 import type { Variants } from 'motion/react';
 import type { HTMLAttributes } from 'react';
+import type React from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { cn } from '@/lib/utils';
 
 export interface TwitterIconHandle {
   startAnimation: () => void;
@@ -53,10 +54,10 @@ const TwitterIcon = forwardRef<TwitterIconHandle, TwitterIconProps>(
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('animate');
-        } else {
+        if (isControlledRef.current) {
           onMouseEnter?.(e);
+        } else {
+          controls.start('animate');
         }
       },
       [controls, onMouseEnter]
@@ -64,10 +65,10 @@ const TwitterIcon = forwardRef<TwitterIconHandle, TwitterIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
-          controls.start('normal');
-        } else {
+        if (isControlledRef.current) {
           onMouseLeave?.(e);
+        } else {
+          controls.start('normal');
         }
       },
       [controls, onMouseLeave]
@@ -76,7 +77,7 @@ const TwitterIcon = forwardRef<TwitterIconHandle, TwitterIconProps>(
     return (
       <div
         className={cn(
-          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          'flex cursor-pointer select-none items-center justify-center rounded-md p-2 transition-colors duration-200 hover:bg-accent',
           className
         )}
         onMouseEnter={handleMouseEnter}
@@ -94,6 +95,7 @@ const TwitterIcon = forwardRef<TwitterIconHandle, TwitterIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
+          <title>X</title>
           <motion.path
             d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
             variants={pathVariants}

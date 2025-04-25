@@ -1,10 +1,11 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import type { Variants } from 'motion/react';
 import { motion, useAnimation } from 'motion/react';
 import type { HTMLAttributes } from 'react';
+import type React from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { cn } from '@/lib/utils';
 
 export interface GithubIconHandle {
   startAnimation: () => void;
@@ -55,7 +56,7 @@ const tailVariants: Variants = {
     transition: {
       duration: 2.5,
       ease: 'easeInOut',
-      repeat: Infinity,
+      repeat: Number.POSITIVE_INFINITY,
     },
   },
 };
@@ -84,12 +85,12 @@ const GithubIcon = forwardRef<GithubIconHandle, GithubIconProps>(
 
     const handleMouseEnter = useCallback(
       async (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
+        if (isControlledRef.current) {
+          onMouseEnter?.(e);
+        } else {
           bodyControls.start('animate');
           await tailControls.start('draw');
           tailControls.start('wag');
-        } else {
-          onMouseEnter?.(e);
         }
       },
       [bodyControls, onMouseEnter, tailControls]
@@ -97,11 +98,11 @@ const GithubIcon = forwardRef<GithubIconHandle, GithubIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
+        if (isControlledRef.current) {
+          onMouseLeave?.(e);
+        } else {
           bodyControls.start('normal');
           tailControls.start('normal');
-        } else {
-          onMouseLeave?.(e);
         }
       },
       [bodyControls, tailControls, onMouseLeave]
@@ -110,7 +111,7 @@ const GithubIcon = forwardRef<GithubIconHandle, GithubIconProps>(
     return (
       <div
         className={cn(
-          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          'flex cursor-pointer select-none items-center justify-center rounded-md p-2 transition-colors duration-200 hover:bg-accent',
           className
         )}
         onMouseEnter={handleMouseEnter}
@@ -128,6 +129,7 @@ const GithubIcon = forwardRef<GithubIconHandle, GithubIconProps>(
           strokeLinecap="round"
           strokeLinejoin="round"
         >
+          <title>Github</title>
           <motion.path
             variants={bodyVariants}
             initial="normal"

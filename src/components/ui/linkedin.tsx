@@ -1,10 +1,11 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { motion, useAnimation } from 'motion/react';
 import type { Variants } from 'motion/react';
 import type { HTMLAttributes } from 'react';
+import type React from 'react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
-import { cn } from '@/lib/utils';
 
 export interface LinkedinIconHandle {
   startAnimation: () => void;
@@ -108,12 +109,12 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
 
     const handleMouseEnter = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
+        if (isControlledRef.current) {
+          onMouseEnter?.(e);
+        } else {
           pathControls.start('animate');
           rectControls.start('animate');
           circleControls.start('animate');
-        } else {
-          onMouseEnter?.(e);
         }
       },
       [circleControls, onMouseEnter, pathControls, rectControls]
@@ -121,12 +122,12 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
 
     const handleMouseLeave = useCallback(
       (e: React.MouseEvent<HTMLDivElement>) => {
-        if (!isControlledRef.current) {
+        if (isControlledRef.current) {
+          onMouseLeave?.(e);
+        } else {
           pathControls.start('normal');
           rectControls.start('normal');
           circleControls.start('normal');
-        } else {
-          onMouseLeave?.(e);
         }
       },
       [pathControls, rectControls, circleControls, onMouseLeave]
@@ -135,7 +136,7 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
     return (
       <div
         className={cn(
-          `cursor-pointer select-none p-2 hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center`,
+          'flex cursor-pointer select-none items-center justify-center rounded-md p-2 transition-colors duration-200 hover:bg-accent',
           className
         )}
         onMouseEnter={handleMouseEnter}
@@ -153,6 +154,7 @@ const LinkedinIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
           strokeLinejoin="round"
           viewBox="0 0 24 24"
         >
+          <title>Linkedin</title>
           <motion.path
             variants={pathVariants}
             initial="normal"

@@ -1,10 +1,10 @@
 // @ts-check
-import { defineConfig, fontProviders } from "astro/config";
-import mdx from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
-import react from "@astrojs/react";
+import mdx from '@astrojs/mdx';
+import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
+import { defineConfig, fontProviders } from 'astro/config';
 
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,12 +12,12 @@ export default defineConfig({
     fonts: [
       {
         provider: fontProviders.google(),
-        name: "Roboto",
-        cssVariable: "--font-roboto",
+        name: 'Roboto',
+        cssVariable: '--font-roboto',
       },
     ],
   },
-  site: "https://deepso.dev",
+  site: 'https://deepso.dev',
   integrations: [mdx(), sitemap(), react()],
   vite: {
     plugins: [tailwindcss()],
