@@ -1,55 +1,17 @@
 ---
 import { Image } from "astro:assets";
 
-import githubSvg from "../assets/github.svg";
-import twitterSvg from "../assets/x.svg";
-import linkedinSvg from "../assets/linkedin.svg";
+import {GithubIcon} from "@/components/ui/github"
+import {TwitterIcon} from "@/components/ui/twitter"
+import {LinkedinIcon} from "@/components/ui/linkedin"
+
 
 import Layout from "../layouts/layout.astro";
 ---
 
 <Layout>
-  <main class="vertical space-y-4 text-white">
+  <main class="vertical space-y-4">
     <h1 class="text-xl">Deepso.</h1>
-    <ul class="horizontal space-x-4">
-      <li>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/deepso7"
-        >
-          <Image src={githubSvg} width={20} alt="Github logo" loading="eager" />
-        </a>
-      </li>
-      <li>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://twitter.com/deepso7"
-        >
-          <Image
-            src={twitterSvg}
-            width={20}
-            alt="Twitter logo"
-            loading="eager"
-          />
-        </a>
-      </li>
-      <li>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.linkedin.com/in/deepanshu-singh-620797191"
-        >
-          <Image
-            src={linkedinSvg}
-            width={20}
-            alt="LinkedIn logo"
-            loading="eager"
-          />
-        </a>
-      </li>
-    </ul>
     <p class="text-sm font-thin italic">
       India, Lead Engineer <a
         target="_blank"
@@ -58,5 +20,34 @@ import Layout from "../layouts/layout.astro";
         >@Huddle01
       </a>.
     </p>
+    <ul class="horizontal space-x-4">
+      <li>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/deepso7"
+        >
+          <GithubIcon client:load />
+        </a>
+      </li>
+      <li>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://twitter.com/deepso7"
+        >
+          <TwitterIcon client:load />
+        </a>
+      </li>
+      <li>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/deepso7"
+        >
+          <LinkedinIcon client:load />
+        </a>
+      </li>
+    </ul>
   </main>
 </Layout>
