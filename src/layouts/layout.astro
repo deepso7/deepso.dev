@@ -31,7 +31,9 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../constants';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<SpeedInsights />
 	</head>
-	<body class="vertical center pt-12">
-		<slot />
+	<body class="vertical center pt-12 md:w-1/3 mx-auto">
+		<main class="vertical space-y-4">
+			<slot />
+		</main>
 	</body>
 </html>
