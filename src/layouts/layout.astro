@@ -1,8 +1,10 @@
 ---
 import '../index.css';
 
-import { ClientRouter } from 'astro:transitions';
 import SpeedInsights from '@vercel/speed-insights/astro';
+import type { ImageMetadata } from 'astro';
+
+import { ClientRouter } from 'astro:transitions';
 
 import BaseHead from '../components/base-head.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../constants';
@@ -10,12 +12,14 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../constants';
 type Props = {
 	title?: string;
 	description?: string;
-	image?: string;
+	image?: ImageMetadata;
 };
 
 const title = Astro.props?.title ?? SITE_TITLE;
 const description = Astro.props?.description ?? SITE_DESCRIPTION;
-const image = Astro.props?.image ?? 'cover.svg';
+const image =
+	// biome-ignore lint/style/noNonNullAssertion: <explanation>
+	Astro.props?.image ?? (await import('../assets/cover.svg').then((img) => img.default))!;
 ---
 
 <script is:inline>
