@@ -1,0 +1,12 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Layout from './layout.astro';
+
+type Props = { post: CollectionEntry<'writings'> };
+
+const { data } = Astro.props.post;
+---
+
+<Layout title={data.title} description={data.description}>
+	<slot />
+</Layout>

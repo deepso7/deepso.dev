@@ -1,7 +1,7 @@
 ---
 title: 'Hi'
 description: 'Welcome to hopefully something'
-pubDate: 'Jul 08 2022'
+pubDate: 'Apr 28 2025'
 heroImage: '/blog-placeholder-3.jpg'
 ---
 
