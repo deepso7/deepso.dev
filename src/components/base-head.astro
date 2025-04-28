@@ -5,17 +5,22 @@ import '../index.css';
 
 import { Font } from 'astro:assets';
 
+import { getImage } from 'astro:assets';
 import { SITE_TITLE } from '../constants';
 
 interface Props {
 	title: string;
 	description: string;
-	image?: string;
+	image: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/cover.svg' } = Astro.props;
+const { title, description, image } = Astro.props;
+
+const ogImage = await import(`../assets/${image}`).then((img) => img.default);
+
+const i = await getImage({ src: ogImage, width: 1200, height: 630 });
 ---
 
 <!-- Global Metadata -->
@@ -52,7 +57,7 @@ const { title, description, image = '/cover.svg' } = Astro.props;
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={new URL(i.src, Astro.url)} />
 <meta property="og:site_name" content="Deepso" />
 
 <!-- Twitter -->
@@ -60,4 +65,4 @@ const { title, description, image = '/cover.svg' } = Astro.props;
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={new URL(i.src, Astro.url)} />

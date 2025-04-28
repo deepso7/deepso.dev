@@ -10,10 +10,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../constants';
 type Props = {
 	title?: string;
 	description?: string;
+	image?: string;
 };
 
 const title = Astro.props?.title ?? SITE_TITLE;
 const description = Astro.props?.description ?? SITE_DESCRIPTION;
+const image = Astro.props?.image ?? 'cover.svg';
 ---
 
 <script is:inline>
@@ -46,7 +48,7 @@ const description = Astro.props?.description ?? SITE_DESCRIPTION;
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image={image} />
 		<ClientRouter />
 		<SpeedInsights />
 	</head>
