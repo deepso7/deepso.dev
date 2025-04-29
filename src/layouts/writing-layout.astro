@@ -14,11 +14,11 @@ import { HomeIcon } from '@/components/ui/home';
 
 import Layout from './layout.astro';
 
-type Props = { post: CollectionEntry<'writings'> };
+type Props = { post: CollectionEntry<'writing'> };
 
 const { id, data } = Astro.props.post;
 
-const writingImage = await import(`../assets/writings/${id}.jpeg`).then((img) => img.default);
+const writingImage = await import(`../assets/writing/${id}.jpeg`).then((img) => img.default);
 ---
 
 <Layout title={data.title} description={data.description} image={writingImage}>
