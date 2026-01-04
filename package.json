@@ -1,44 +1,26 @@
 {
-  "name": "deepso",
+  "name": "tmp",
+  "version": "0.0.0",
   "type": "module",
-  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "lint": "biome lint --write .",
-    "lint:fix": "biome check --write .",
-    "format:code": "biome format --write && prettier -w \"**/*\" --ignore-unknown --cache"
+    "dev": "waku dev",
+    "build": "waku build",
+    "start": "waku start"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.2.5",
-    "@astrojs/react": "^4.2.5",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.3.1",
-    "@radix-ui/react-dropdown-menu": "^2.1.12",
-    "@radix-ui/react-slot": "^1.2.0",
-    "@tailwindcss/vite": "^4.1.4",
-    "@theme-toggles/react": "^4.1.0",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.7.5",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.503.0",
-    "motion": "^12.9.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "sharp": "^0.34.1",
-    "tailwind-merge": "^3.2.0",
-    "tailwindcss": "^4.1.4"
+    "react": "~19.2.3",
+    "react-dom": "~19.2.3",
+    "react-server-dom-webpack": "~19.2.3",
+    "waku": "1.0.0-alpha.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "prettier": "^3.5.3",
-    "prettier-plugin-astro": "^0.14.1",
-    "tw-animate-css": "^1.2.8",
-    "ultracite": "4.2.1"
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.0",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
   }
 }
