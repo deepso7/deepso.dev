@@ -1,5 +1,6 @@
-import { Link } from 'waku';
-import { Counter } from '../components/counter';
+import { Link } from "waku";
+
+import { Counter } from "../components/counter";
 
 export default async function HomePage() {
   const data = await getData();
@@ -19,9 +20,9 @@ export default async function HomePage() {
 
 const getData = async () => {
   const data = {
-    title: 'Waku',
-    headline: 'Waku',
-    body: 'Hello world!',
+    title: "Waku",
+    headline: "Waku",
+    body: "Hello world!",
   };
 
   return data;
@@ -29,6 +30,6 @@ const getData = async () => {
 
 export const getConfig = async () => {
   return {
-    render: 'static',
+    render: "static",
   } as const;
 };
