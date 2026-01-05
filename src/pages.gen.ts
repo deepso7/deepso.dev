@@ -5,10 +5,13 @@ import type { PathsForPages, GetConfigResponse } from 'waku/router';
 
 // prettier-ignore
 import type { getConfig as File_Index_getConfig } from './pages/index';
+// prettier-ignore
+import type { getConfig as File_WritingSlug_getConfig } from './pages/writing/[slug]';
 
 // prettier-ignore
 type Page =
-| ({ path: '/' } & GetConfigResponse<typeof File_Index_getConfig>);
+| ({ path: '/' } & GetConfigResponse<typeof File_Index_getConfig>)
+| ({ path: '/writing/[slug]' } & GetConfigResponse<typeof File_WritingSlug_getConfig>);
 
 // prettier-ignore
 declare module 'waku/router' {
