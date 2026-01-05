@@ -1,3 +1,4 @@
+import { ModeToggle } from "../components/mode-toggle";
 import { Button } from "../components/ui/button";
 import { GithubIcon } from "../components/ui/github";
 import { LinkedinIcon } from "../components/ui/linkedin";
@@ -41,7 +42,7 @@ export default async function HomePage() {
                 rel="noopener noreferrer"
                 href="https://github.com/deepso7"
               >
-                <GithubIcon />
+                <GithubIcon className="flex cursor-pointer select-none items-center justify-center rounded-md p-2 transition-colors duration-200 hover:bg-accent" />
               </a>
             </Button>
           </li>
@@ -52,7 +53,7 @@ export default async function HomePage() {
                 rel="noopener noreferrer"
                 href="https://twitter.com/deepso7"
               >
-                <TwitterIcon />
+                <TwitterIcon className="flex cursor-pointer select-none items-center justify-center rounded-md p-2 transition-colors duration-200 hover:bg-accent" />
               </a>
             </Button>
           </li>
@@ -63,13 +64,13 @@ export default async function HomePage() {
                 rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/deepso7"
               >
-                <LinkedinIcon />
+                <LinkedinIcon className="flex cursor-pointer select-none items-center justify-center rounded-md p-2 transition-colors duration-200 hover:bg-accent" />
               </a>
             </Button>
           </li>
         </ul>
 
-        {/* <ModeToggle client:load /> */}
+        <ModeToggle />
       </div>
     </div>
   );
