@@ -1,3 +1,5 @@
+import { Link } from "waku";
+
 import { ModeToggle } from "../components/mode-toggle";
 import { Button } from "../components/ui/button";
 import { GithubIcon } from "../components/ui/github";
@@ -21,13 +23,14 @@ export default async function HomePage() {
         <div>
           <ul className="space-y-2">
             <li>
-              <a
-                className="text-sm font-light italic underline"
-                href="/writing/hi"
-              >
-                {" "}
-                Hi.{" "}
-              </a>
+              <Button variant="link">
+                <Link
+                  to="/writing/hi"
+                  className="text-sm font-light italic underline"
+                >
+                  hi
+                </Link>
+              </Button>
             </li>
           </ul>
         </div>
