@@ -1,0 +1,45 @@
+---
+slug: hi
+title: Hi
+description: Writing my first blog
+date: 2026/1/07
+---
+
+Thinking a lot about writing blogs and how to write them.
+This is more of a test blog for testing my setup.
+
+```ts
+import "../styles.css";
+import type { ReactNode } from "react";
+
+import { Head } from "@/components/head";
+import { ThemeProvider } from "@/components/theme-provider";
+
+type RootLayoutProps = { children: ReactNode };
+
+export default async function RootLayout({ children }: RootLayoutProps) {
+  return (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <div>
+        <Head />
+        <main className="vertical center pt-12 md:w-1/3 mx-auto px-4 md:px-2">
+          {children}
+        </main>
+      </div>
+    </ThemeProvider>
+  );
+}
+
+export const getConfig = async () => {
+  return {
+    render: "static",
+  } as const;
+};
+```
+
+This is my laypout, built this site using waku.

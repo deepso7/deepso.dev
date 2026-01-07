@@ -13,6 +13,7 @@
   "dependencies": {
     "@base-ui/react": "1.0.0",
     "@fontsource-variable/roboto": "5.2.9",
+    "@mdx-js/mdx": "3.1.1",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "lucide-react": "0.562.0",
@@ -27,8 +28,10 @@
     "waku": "1.0.0-alpha.1"
   },
   "devDependencies": {
+    "@sindresorhus/slugify": "3.0.0",
     "@tailwindcss/vite": "4.1.18",
     "@total-typescript/ts-reset": "0.6.1",
+    "@types/mdx": "2.0.13",
     "@types/node": "25.0.3",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
@@ -36,8 +39,12 @@
     "babel-plugin-react-compiler": "1.0.0",
     "oxfmt": "0.21.0",
     "oxlint": "1.36.0",
+    "remark-frontmatter": "5.0.0",
+    "remark-mdx-frontmatter": "5.2.0",
+    "shiki": "3.21.0",
     "tailwindcss": "4.1.18",
     "typescript": "5.9.3",
     "ultracite": "7.0.6"
-  }
+  },
+  "packageManager": "pnpm@10.27.0+sha512.72d699da16b1179c14ba9e64dc71c9a40988cbdc65c264cb0e489db7de917f20dcf4d64d8723625f2969ba52d4b7e2a1170682d9ac2a5dcaeaab732b7e16f04a"
 }

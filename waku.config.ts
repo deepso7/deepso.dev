@@ -14,6 +14,13 @@ export default defineConfig({
         },
       }),
     ],
+    environments: {
+      rsc: {
+        resolve: {
+          external: ["shiki"],
+        },
+      },
+    },
     resolve: {
       alias: {
         "@": path.resolve(
