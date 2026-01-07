@@ -48,8 +48,8 @@ importers:
         specifier: 1.4.0
         version: 1.4.0
       waku:
-        specifier: 1.0.0-alpha.0
-        version: 1.0.0-alpha.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react-server-dom-webpack@19.2.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(webpack@5.104.1))(react@19.2.3)(terser@5.44.1)
+        specifier: 1.0.0-alpha.1
+        version: 1.0.0-alpha.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react-server-dom-webpack@19.2.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(webpack@5.104.1))(react@19.2.3)(terser@5.44.1)
     devDependencies:
       '@tailwindcss/vite':
         specifier: 4.1.18
@@ -2515,8 +2515,8 @@ packages:
       vite:
         optional: true
 
-  waku@1.0.0-alpha.0:
-    resolution: {integrity: sha512-DU5rAFi7Cm+wVNPN+fYy7ljinUnxe7n77HIOx59bv5cP1hSHRVNLQRn9NofPccWzE6ktT+pOubaStY14KBPDuA==}
+  waku@1.0.0-alpha.1:
+    resolution: {integrity: sha512-IN2+Q4yeomXyDgXWrtze45RQdNsk/B+ZpINhyc5jyurVpUfdMCGT86xZ5NWZexLei6P9RGSUsMY7JIdF09ppew==}
     engines: {node: ^24.0.0 || ^22.12.0 || ^20.19.0}
     hasBin: true
     peerDependencies:
@@ -4882,7 +4882,7 @@ snapshots:
     optionalDependencies:
       vite: 7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)
 
-  waku@1.0.0-alpha.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react-server-dom-webpack@19.2.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(webpack@5.104.1))(react@19.2.3)(terser@5.44.1):
+  waku@1.0.0-alpha.1(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.3(react@19.2.3))(react-server-dom-webpack@19.2.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(webpack@5.104.1))(react@19.2.3)(terser@5.44.1):
     dependencies:
       '@hono/node-server': 1.19.7(hono@4.11.3)
       '@vitejs/plugin-react': 5.1.2(vite@7.3.0(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1))

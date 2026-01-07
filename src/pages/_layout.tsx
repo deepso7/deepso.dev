@@ -1,8 +1,8 @@
 import "../styles.css";
 import type { ReactNode } from "react";
 
-import { ThemeProvider } from "../components/theme-provider";
-import { Head } from "../head";
+import { Head } from "@/components/head";
+import { ThemeProvider } from "@/components/theme-provider";
 
 type RootLayoutProps = { children: ReactNode };
 
