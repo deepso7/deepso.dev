@@ -168,4 +168,27 @@
 	.space-between {
 		@apply justify-between;
 	}
+
+	.prose {
+		@apply text-foreground;
+		line-height: 1.75;
+		font-size: 1rem;
+	}
+
+	.prose-lg {
+		font-size: 1.125rem;
+		line-height: 1.777777778;
+	}
+
+	.prose :where(code):not(:where([class~="not-prose"] *)) {
+		font-weight: 500;
+	}
+
+	.prose :where(pre):not(:where([class~="not-prose"] *)) {
+		overflow-x: auto;
+	}
+
+	.prose :where(a):not(:where([class~="not-prose"] *)) {
+		font-weight: 500;
+	}
 }
