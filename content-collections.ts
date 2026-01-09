@@ -19,6 +19,7 @@ const writing = defineCollection({
     const mdx = await compileMDX(context, document, {
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
     });
+
     return {
       ...document,
       mdx,
