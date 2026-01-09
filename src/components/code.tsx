@@ -24,9 +24,11 @@ export const Code = async ({ code, className, ...rest }: CodeProps) => {
 
   if (!lang) throw new Error("No language detected");
 
-  (await getHighlighter()).loadLanguage(lang as BundledLanguage);
+  const highlighter = await getHighlighter();
 
-  const html = (await getHighlighter()).codeToHtml(code, {
+  await highlighter.loadLanguage(lang as BundledLanguage);
+
+  const html = highlighter.codeToHtml(code, {
     lang,
     theme: "vitesse-dark",
   });

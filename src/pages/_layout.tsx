@@ -4,23 +4,26 @@ import type { ReactNode } from "react";
 import { Head } from "@/components/head";
 import { ThemeProvider } from "@/components/theme-provider";
 
+import { Footer } from "../components/footer";
+
 type RootLayoutProps = { children: ReactNode };
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      <div>
+    <body className="max-w-2xl m-auto">
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
         <Head />
-        <main className="vertical center pt-12 md:w-1/3 mx-auto px-4 md:px-2">
+        <main className="p-6 pt-3 md:pt-6 min-h-screen">
           {children}
+          <Footer />
         </main>
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </body>
   );
 }
 
