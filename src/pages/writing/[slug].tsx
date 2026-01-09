@@ -1,22 +1,26 @@
+import { allWritings } from "content-collections";
 import { PageProps } from "waku/router";
-
-import { getPostPaths } from "@/lib/get-file";
 
 export default async function WritingPage({
   slug,
 }: PageProps<"/writing/[slug]">) {
-  console.log({ slug });
+  const writing = allWritings.find((data) => data.slug === slug);
 
-  return <div>Writing Page</div>;
+  if (!writing) return <div>Not Found</div>;
+
+  return (
+    <div>
+      <h1>{writing.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: writing.content }} />
+    </div>
+  );
 }
 
 export const getConfig = async () => {
-  const blogPaths = await getPostPaths("./private/writing");
-
-  console.log({ blogPaths });
+  const paths = allWritings.map((data) => data.slug);
 
   return {
     render: "static",
-    staticPaths: ["hi"],
+    staticPaths: paths,
   } as const;
 };

@@ -1,3 +1,4 @@
+import contentCollections from "@content-collections/vite";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import path from "node:path";
@@ -13,6 +14,7 @@ export default defineConfig({
           plugins: ["babel-plugin-react-compiler"],
         },
       }),
+      contentCollections(),
     ],
     environments: {
       rsc: {
