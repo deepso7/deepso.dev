@@ -12,6 +12,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { HomeIcon } from "@/components/ui/home";
 
 export default async function WritingPage({
   slug,
@@ -25,7 +26,13 @@ export default async function WritingPage({
       <Breadcrumb className="py-4">
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink render={<Link to="/">Home</Link>} />
+            <BreadcrumbLink
+              render={
+                <Link to="/">
+                  <HomeIcon size={16} />
+                </Link>
+              }
+            />
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbPage>{writing.slug}</BreadcrumbPage>
