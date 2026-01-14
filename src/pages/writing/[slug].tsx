@@ -42,7 +42,7 @@ export default async function WritingPage({
       </Breadcrumb>
       <article className="w-full max-w-none">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-2">
+          <h1 className="mb-2 text-4xl font-bold text-foreground">
             {writing.title}
           </h1>
           {writing.description && (

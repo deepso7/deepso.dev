@@ -35,7 +35,7 @@ export const Code = async ({ code, className, ...rest }: CodeProps) => {
 
   return (
     <div
-      className="my-6 overflow-x-auto rounded-lg border border-border [&_pre]:p-4 font-mono text-sm"
+      className="my-6 overflow-x-auto rounded-lg border border-border font-mono text-sm [&_pre]:p-4"
       dangerouslySetInnerHTML={{ __html: html }}
       {...rest}
     />

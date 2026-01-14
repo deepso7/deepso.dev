@@ -11,10 +11,10 @@ export const components = {
     return (
       <h1
         id={id}
-        className="text-4xl font-bold mt-8 mb-4 text-foreground scroll-mt-20"
+        className="mt-8 mb-4 scroll-mt-20 text-4xl font-bold text-foreground"
         {...rest}
       >
-        <a href={`#${id}`} className="hover:text-primary transition-colors">
+        <a href={`#${id}`} className="transition-colors hover:text-primary">
           {children}
         </a>
       </h1>
@@ -26,10 +26,10 @@ export const components = {
     return (
       <h2
         id={id}
-        className="text-3xl font-bold mt-8 mb-4 text-foreground scroll-mt-20"
+        className="mt-8 mb-4 scroll-mt-20 text-3xl font-bold text-foreground"
         {...rest}
       >
-        <a href={`#${id}`} className="hover:text-primary transition-colors">
+        <a href={`#${id}`} className="transition-colors hover:text-primary">
           {children}
         </a>
       </h2>
@@ -41,10 +41,10 @@ export const components = {
     return (
       <h3
         id={id}
-        className="text-2xl font-semibold mt-6 mb-3 text-foreground scroll-mt-20"
+        className="mt-6 mb-3 scroll-mt-20 text-2xl font-semibold text-foreground"
         {...rest}
       >
-        <a href={`#${id}`} className="hover:text-primary transition-colors">
+        <a href={`#${id}`} className="transition-colors hover:text-primary">
           {children}
         </a>
       </h3>
@@ -56,10 +56,10 @@ export const components = {
     return (
       <h4
         id={id}
-        className="text-xl font-semibold mt-4 mb-2 text-foreground scroll-mt-20"
+        className="mt-4 mb-2 scroll-mt-20 text-xl font-semibold text-foreground"
         {...rest}
       >
-        <a href={`#${id}`} className="hover:text-primary transition-colors">
+        <a href={`#${id}`} className="transition-colors hover:text-primary">
           {children}
         </a>
       </h4>
@@ -71,10 +71,10 @@ export const components = {
     return (
       <h5
         id={id}
-        className="text-lg font-semibold mt-4 mb-2 text-foreground scroll-mt-20"
+        className="mt-4 mb-2 scroll-mt-20 text-lg font-semibold text-foreground"
         {...rest}
       >
-        <a href={`#${id}`} className="hover:text-primary transition-colors">
+        <a href={`#${id}`} className="transition-colors hover:text-primary">
           {children}
         </a>
       </h5>
@@ -86,10 +86,10 @@ export const components = {
     return (
       <h6
         id={id}
-        className="text-base font-semibold mt-4 mb-2 text-foreground scroll-mt-20"
+        className="mt-4 mb-2 scroll-mt-20 text-base font-semibold text-foreground"
         {...rest}
       >
-        <a href={`#${id}`} className="hover:text-primary transition-colors">
+        <a href={`#${id}`} className="transition-colors hover:text-primary">
           {children}
         </a>
       </h6>
@@ -97,7 +97,7 @@ export const components = {
   },
   p: ({ children, ...rest }: any) => {
     return (
-      <p className="my-4 text-foreground leading-7" {...rest}>
+      <p className="my-4 leading-7 text-foreground" {...rest}>
         {children}
       </p>
     );
@@ -111,7 +111,7 @@ export const components = {
   },
   em: ({ children, ...rest }: any) => {
     return (
-      <em className="italic text-foreground" {...rest}>
+      <em className="text-foreground italic" {...rest}>
         {children}
       </em>
     );
@@ -142,7 +142,7 @@ export const components = {
   },
   ul: ({ children, ...rest }: any) => {
     return (
-      <ul className="my-4 ml-6 list-disc [&>li]:mt-2 text-foreground" {...rest}>
+      <ul className="my-4 ml-6 list-disc text-foreground [&>li]:mt-2" {...rest}>
         {children}
       </ul>
     );
@@ -150,7 +150,7 @@ export const components = {
   ol: ({ children, ...rest }: any) => {
     return (
       <ol
-        className="my-4 ml-6 list-decimal [&>li]:mt-2 text-foreground"
+        className="my-4 ml-6 list-decimal text-foreground [&>li]:mt-2"
         {...rest}
       >
         {children}
@@ -184,7 +184,7 @@ export const components = {
     return (
       <div className="my-4">
         <blockquote
-          className="border-l-4 border-primary bg-muted/50 py-4 px-6 rounded-r-lg"
+          className="rounded-r-lg border-l-4 border-primary bg-muted/50 px-6 py-4"
           {...rest}
         >
           <div className="mb-2 flex items-center gap-2">
@@ -288,7 +288,7 @@ export const components = {
   },
   del: ({ children, ...rest }: any) => {
     return (
-      <del className="line-through text-muted-foreground" {...rest}>
+      <del className="text-muted-foreground line-through" {...rest}>
         {children}
       </del>
     );
@@ -302,7 +302,7 @@ export const components = {
   },
   mark: ({ children, ...rest }: any) => {
     return (
-      <mark className="bg-accent text-accent-foreground rounded px-1" {...rest}>
+      <mark className="rounded bg-accent px-1 text-accent-foreground" {...rest}>
         {children}
       </mark>
     );
@@ -310,7 +310,7 @@ export const components = {
   kbd: ({ children, ...rest }: any) => {
     return (
       <kbd
-        className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-xs font-medium text-muted-foreground"
+        className="pointer-events-none inline-flex h-5 items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-xs font-medium text-muted-foreground select-none"
         {...rest}
       >
         {children}

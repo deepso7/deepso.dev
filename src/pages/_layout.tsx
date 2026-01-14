@@ -10,7 +10,7 @@ type RootLayoutProps = { children: ReactNode };
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   return (
-    <body className="max-w-2xl m-auto">
+    <body className="m-auto max-w-2xl">
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
@@ -18,7 +18,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         disableTransitionOnChange
       >
         <Head />
-        <main className="p-6 pt-3 md:pt-6 min-h-screen">
+        <main className="min-h-screen p-6 pt-3 md:pt-6">
           {children}
           <Footer />
         </main>

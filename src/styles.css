@@ -121,7 +121,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply font-sans bg-background text-foreground;
+    @apply bg-background font-sans text-foreground;
   }
   html {
     @apply font-sans;
@@ -150,7 +150,7 @@
   }
 
   .horizontal.center {
-    @apply justify-center items-center;
+    @apply items-center justify-center;
   }
 
   .vertical.center-v {
@@ -162,7 +162,7 @@
   }
 
   .vertical.center {
-    @apply justify-center items-center;
+    @apply items-center justify-center;
   }
 
   .space-between {
