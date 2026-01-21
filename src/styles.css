@@ -122,7 +122,8 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background font-sans text-foreground;
+    @apply bg-background font-sans text-foreground antialiased;
+    font-weight: 300;
   }
   html {
     @apply font-sans;
@@ -169,5 +170,4 @@
   .space-between {
     @apply justify-between;
   }
-
 }
