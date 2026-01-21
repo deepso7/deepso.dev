@@ -2,6 +2,7 @@ import "../styles.css";
 import type { ReactNode } from "react";
 
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -13,6 +14,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <body className="m-auto max-w-2xl">
       <Analytics />
+      <SpeedInsights />
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
