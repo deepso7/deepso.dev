@@ -1,8 +1,10 @@
+import { Image } from "@unpic/react";
 import { Link } from "waku";
 
 import { getAnchor } from "@/lib/get-anchor";
 
 import { Code } from "./code";
+import { Separator } from "./ui/separator";
 
 export const components = {
   h1: ({ children, ...rest }: any) => {
@@ -159,7 +161,7 @@ export const components = {
 
   li: ({ children, ...rest }: any) => {
     return (
-      <li className="leading-7" {...rest}>
+      <li className="" {...rest}>
         {children}
       </li>
     );
@@ -211,7 +213,7 @@ export const components = {
   },
 
   hr: () => {
-    return <hr className="my-8 border-border" />;
+    return <Separator />;
   },
 
   table: ({ children, ...rest }: any) => {
@@ -275,7 +277,7 @@ export const components = {
 
   img: ({ src, alt, ...rest }: any) => {
     return (
-      <img
+      <Image
         src={src}
         alt={alt}
         className="my-6 rounded-lg border border-border"
