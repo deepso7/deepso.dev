@@ -3,6 +3,7 @@ import { allWritings } from "content-collections";
 import { Link } from "waku";
 import { PageProps } from "waku/router";
 
+import { Head } from "@/components/head";
 import { components } from "@/components/mdx";
 import {
   Breadcrumb,
@@ -23,6 +24,7 @@ export default async function WritingPage({
 
   return (
     <>
+      <Head title={writing.title} description={writing.description} />
       <Breadcrumb className="py-4">
         <BreadcrumbList>
           <BreadcrumbItem>

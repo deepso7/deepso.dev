@@ -14,12 +14,11 @@ export const components = {
         className="mt-8 mb-4 scroll-mt-20 text-4xl font-bold text-foreground"
         {...rest}
       >
-        <a href={`#${id}`} className="transition-colors hover:text-primary">
-          {children}
-        </a>
+        {children}
       </h1>
     );
   },
+
   h2: ({ children, ...rest }: any) => {
     const id = getAnchor(children);
 
@@ -29,12 +28,11 @@ export const components = {
         className="mt-8 mb-4 scroll-mt-20 text-3xl font-bold text-foreground"
         {...rest}
       >
-        <a href={`#${id}`} className="transition-colors hover:text-primary">
-          {children}
-        </a>
+        {children}
       </h2>
     );
   },
+
   h3: ({ children, ...rest }: any) => {
     const id = getAnchor(children);
 
@@ -44,12 +42,11 @@ export const components = {
         className="mt-6 mb-3 scroll-mt-20 text-2xl font-semibold text-foreground"
         {...rest}
       >
-        <a href={`#${id}`} className="transition-colors hover:text-primary">
-          {children}
-        </a>
+        {children}
       </h3>
     );
   },
+
   h4: ({ children, ...rest }: any) => {
     const id = getAnchor(children);
 
@@ -59,12 +56,11 @@ export const components = {
         className="mt-4 mb-2 scroll-mt-20 text-xl font-semibold text-foreground"
         {...rest}
       >
-        <a href={`#${id}`} className="transition-colors hover:text-primary">
-          {children}
-        </a>
+        {children}
       </h4>
     );
   },
+
   h5: ({ children, ...rest }: any) => {
     const id = getAnchor(children);
 
@@ -74,12 +70,11 @@ export const components = {
         className="mt-4 mb-2 scroll-mt-20 text-lg font-semibold text-foreground"
         {...rest}
       >
-        <a href={`#${id}`} className="transition-colors hover:text-primary">
-          {children}
-        </a>
+        {children}
       </h5>
     );
   },
+
   h6: ({ children, ...rest }: any) => {
     const id = getAnchor(children);
 
@@ -89,19 +84,19 @@ export const components = {
         className="mt-4 mb-2 scroll-mt-20 text-base font-semibold text-foreground"
         {...rest}
       >
-        <a href={`#${id}`} className="transition-colors hover:text-primary">
-          {children}
-        </a>
+        {children}
       </h6>
     );
   },
+
   p: ({ children, ...rest }: any) => {
     return (
-      <p className="my-4 leading-7 text-foreground" {...rest}>
+      <p className="text-md my-4 text-foreground" {...rest}>
         {children}
       </p>
     );
   },
+
   strong: ({ children, ...rest }: any) => {
     return (
       <strong className="font-semibold text-foreground" {...rest}>
@@ -109,6 +104,7 @@ export const components = {
       </strong>
     );
   },
+
   em: ({ children, ...rest }: any) => {
     return (
       <em className="text-foreground italic" {...rest}>
@@ -116,6 +112,7 @@ export const components = {
       </em>
     );
   },
+
   a: ({ href, children, ...rest }: any) => {
     const classNames =
       "text-primary hover:text-primary/80 underline underline-offset-4 transition-colors";
@@ -140,6 +137,7 @@ export const components = {
       </a>
     );
   },
+
   ul: ({ children, ...rest }: any) => {
     return (
       <ul className="my-4 ml-6 list-disc text-foreground [&>li]:mt-2" {...rest}>
@@ -147,6 +145,7 @@ export const components = {
       </ul>
     );
   },
+
   ol: ({ children, ...rest }: any) => {
     return (
       <ol
@@ -157,6 +156,7 @@ export const components = {
       </ol>
     );
   },
+
   li: ({ children, ...rest }: any) => {
     return (
       <li className="leading-7" {...rest}>
@@ -164,6 +164,7 @@ export const components = {
       </li>
     );
   },
+
   code: ({ children, ...rest }: any) => {
     return (
       <code
@@ -174,12 +175,14 @@ export const components = {
       </code>
     );
   },
+
   pre: ({ children, ...rest }: any) => {
     const code = children?.props?.children || "";
     const className = children?.props?.className || "";
 
     return <Code code={code} className={className} {...rest} />;
   },
+
   blockquote: ({ children, ...rest }: any) => {
     return (
       <div className="my-4">
@@ -206,9 +209,11 @@ export const components = {
       </div>
     );
   },
+
   hr: () => {
     return <hr className="my-8 border-border" />;
   },
+
   table: ({ children, ...rest }: any) => {
     return (
       <div className="my-6 w-full overflow-y-auto">
@@ -218,6 +223,7 @@ export const components = {
       </div>
     );
   },
+
   thead: ({ children, ...rest }: any) => {
     return (
       <thead className="border-b border-border" {...rest}>
@@ -225,6 +231,7 @@ export const components = {
       </thead>
     );
   },
+
   tbody: ({ children, ...rest }: any) => {
     return (
       <tbody className="[&>tr:last-child]:border-0" {...rest}>
@@ -232,6 +239,7 @@ export const components = {
       </tbody>
     );
   },
+
   tr: ({ children, ...rest }: any) => {
     return (
       <tr
@@ -242,6 +250,7 @@ export const components = {
       </tr>
     );
   },
+
   th: ({ children, ...rest }: any) => {
     return (
       <th
@@ -252,6 +261,7 @@ export const components = {
       </th>
     );
   },
+
   td: ({ children, ...rest }: any) => {
     return (
       <td
@@ -262,6 +272,7 @@ export const components = {
       </td>
     );
   },
+
   img: ({ src, alt, ...rest }: any) => {
     return (
       <img
@@ -272,6 +283,7 @@ export const components = {
       />
     );
   },
+
   sup: ({ children, ...rest }: any) => {
     return (
       <sup className="text-xs" {...rest}>
@@ -279,6 +291,7 @@ export const components = {
       </sup>
     );
   },
+
   sub: ({ children, ...rest }: any) => {
     return (
       <sub className="text-xs" {...rest}>
@@ -286,6 +299,7 @@ export const components = {
       </sub>
     );
   },
+
   del: ({ children, ...rest }: any) => {
     return (
       <del className="text-muted-foreground line-through" {...rest}>
@@ -293,6 +307,7 @@ export const components = {
       </del>
     );
   },
+
   ins: ({ children, ...rest }: any) => {
     return (
       <ins className="underline decoration-primary" {...rest}>
@@ -300,6 +315,7 @@ export const components = {
       </ins>
     );
   },
+
   mark: ({ children, ...rest }: any) => {
     return (
       <mark className="rounded bg-accent px-1 text-accent-foreground" {...rest}>
@@ -307,6 +323,7 @@ export const components = {
       </mark>
     );
   },
+
   kbd: ({ children, ...rest }: any) => {
     return (
       <kbd

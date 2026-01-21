@@ -1,7 +1,6 @@
 import "../styles.css";
 import type { ReactNode } from "react";
 
-import { Head } from "@/components/head";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import { Footer } from "../components/footer";
@@ -17,7 +16,6 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         enableSystem
         disableTransitionOnChange
       >
-        <Head />
         <main className="min-h-screen p-6 pt-3 md:pt-6">
           {children}
           <Footer />

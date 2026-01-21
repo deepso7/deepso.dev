@@ -1,5 +1,6 @@
 import { Link } from "waku";
 
+import { allWritings } from "../../.content-collections/generated";
 import { Button } from "../components/ui/button";
 
 export default async function HomePage() {
@@ -16,23 +17,23 @@ export default async function HomePage() {
       <div className="flex flex-col items-center justify-center space-y-4">
         <h2 className="text-lg font-medium">writing.</h2>
 
-        <div>
-          <ul className="space-y-2">
-            <li>
+        <ul className="flex flex-col items-center justify-center space-y-2">
+          {allWritings.map((w) => (
+            <li key={w.slug}>
               <Button
                 variant="link"
                 render={
                   <Link
-                    to="/writing/hi"
+                    to={`/writing/${w.slug}`}
                     className="text-sm font-light italic underline"
                   >
-                    hi
+                    {w.title}
                   </Link>
                 }
               />
             </li>
-          </ul>
-        </div>
+          ))}
+        </ul>
       </div>
     </div>
   );
