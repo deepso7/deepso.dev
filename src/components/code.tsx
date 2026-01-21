@@ -1,5 +1,7 @@
 import { createHighlighter, Highlighter, BundledLanguage } from "shiki";
 
+import { CopyButton } from "./code-copy-button";
+
 type CodeProps = {
   code: string;
   className?: string;
@@ -35,9 +37,11 @@ export const Code = async ({ code, className, ...rest }: CodeProps) => {
 
   return (
     <div
-      className="my-6 overflow-x-auto rounded-lg border border-border font-mono text-sm [&_pre]:p-4"
-      dangerouslySetInnerHTML={{ __html: html }}
+      className="group relative my-6 overflow-x-auto rounded-lg border border-border font-mono text-sm [&_pre]:p-4"
       {...rest}
-    />
+    >
+      <CopyButton code={code} />
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+    </div>
   );
 };
