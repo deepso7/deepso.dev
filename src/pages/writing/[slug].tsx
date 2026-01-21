@@ -35,10 +35,10 @@ export default async function WritingPage({
                 </Link>
               }
             />
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>{writing.slug}</BreadcrumbPage>
-            </BreadcrumbItem>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>{writing.title}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
