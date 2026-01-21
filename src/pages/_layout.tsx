@@ -1,6 +1,8 @@
 import "../styles.css";
 import type { ReactNode } from "react";
 
+import { Analytics } from "@vercel/analytics/next";
+
 import { ThemeProvider } from "@/components/theme-provider";
 
 import { Footer } from "../components/footer";
@@ -10,6 +12,7 @@ type RootLayoutProps = { children: ReactNode };
 export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <body className="m-auto max-w-2xl">
+      <Analytics />
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
