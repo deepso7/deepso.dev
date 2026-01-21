@@ -6,7 +6,7 @@ import { TwitterIcon } from "./ui/twitter";
 
 export const Footer = () => {
   return (
-    <footer className="mx-auto flex w-1/2 items-center justify-between space-x-4 pt-8">
+    <footer className="flex items-center justify-between pt-8">
       <ul className="horizontal space-x-4">
         <li>
           <Button size="icon-lg" variant="secondary">
