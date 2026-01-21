@@ -91,30 +91,6 @@ export const components = {
     );
   },
 
-  p: ({ children, ...rest }: any) => {
-    return (
-      <p className="text-md my-4 text-foreground" {...rest}>
-        {children}
-      </p>
-    );
-  },
-
-  strong: ({ children, ...rest }: any) => {
-    return (
-      <strong className="font-semibold text-foreground" {...rest}>
-        {children}
-      </strong>
-    );
-  },
-
-  em: ({ children, ...rest }: any) => {
-    return (
-      <em className="text-foreground italic" {...rest}>
-        {children}
-      </em>
-    );
-  },
-
   a: ({ href, children, ...rest }: any) => {
     const classNames =
       "text-primary hover:text-primary/80 underline underline-offset-4 transition-colors";
@@ -137,33 +113,6 @@ export const components = {
       >
         {children}
       </a>
-    );
-  },
-
-  ul: ({ children, ...rest }: any) => {
-    return (
-      <ul className="my-4 ml-6 list-disc text-foreground [&>li]:mt-2" {...rest}>
-        {children}
-      </ul>
-    );
-  },
-
-  ol: ({ children, ...rest }: any) => {
-    return (
-      <ol
-        className="my-4 ml-6 list-decimal text-foreground [&>li]:mt-2"
-        {...rest}
-      >
-        {children}
-      </ol>
-    );
-  },
-
-  li: ({ children, ...rest }: any) => {
-    return (
-      <li className="" {...rest}>
-        {children}
-      </li>
     );
   },
 
@@ -283,38 +232,6 @@ export const components = {
         className="my-6 rounded-lg border border-border"
         {...rest}
       />
-    );
-  },
-
-  sup: ({ children, ...rest }: any) => {
-    return (
-      <sup className="text-xs" {...rest}>
-        {children}
-      </sup>
-    );
-  },
-
-  sub: ({ children, ...rest }: any) => {
-    return (
-      <sub className="text-xs" {...rest}>
-        {children}
-      </sub>
-    );
-  },
-
-  del: ({ children, ...rest }: any) => {
-    return (
-      <del className="text-muted-foreground line-through" {...rest}>
-        {children}
-      </del>
-    );
-  },
-
-  ins: ({ children, ...rest }: any) => {
-    return (
-      <ins className="underline decoration-primary" {...rest}>
-        {children}
-      </ins>
     );
   },
 

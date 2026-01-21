@@ -37,7 +37,7 @@ export const Code = async ({ code, className, ...rest }: CodeProps) => {
 
   return (
     <div
-      className="group relative my-6 overflow-x-auto rounded-lg border border-border font-mono text-sm [&_pre]:p-4"
+      className="not-prose group relative my-6 overflow-x-auto rounded-lg border border-border font-mono text-sm [&_pre]:p-4"
       {...rest}
     >
       <CopyButton code={code} />

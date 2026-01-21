@@ -62,7 +62,7 @@ export default async function WritingPage({
             </time>
           )}
         </header>
-        <div className="prose prose-lg max-w-none">
+        <div className="prose prose-lg max-w-none dark:prose-invert">
           <MDXContent code={writing.mdx} components={components} />
         </div>
       </article>
