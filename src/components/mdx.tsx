@@ -4,6 +4,7 @@ import { Link } from "waku";
 import { getAnchor } from "@/lib/get-anchor";
 
 import { Code } from "./code";
+import { Kbd } from "./ui/kbd";
 import { Separator } from "./ui/separator";
 
 export const components = {
@@ -243,14 +244,7 @@ export const components = {
     );
   },
 
-  kbd: ({ children, ...rest }: any) => {
-    return (
-      <kbd
-        className="pointer-events-none inline-flex h-5 items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-xs font-medium text-muted-foreground select-none"
-        {...rest}
-      >
-        {children}
-      </kbd>
-    );
+  kbd: ({ children }: any) => {
+    return <Kbd>{children}</Kbd>;
   },
 };
