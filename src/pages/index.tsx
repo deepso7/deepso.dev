@@ -1,6 +1,7 @@
 import { Link } from "waku";
 
 import { allWritings } from "../../.content-collections/generated";
+import { Head } from "../components/head";
 
 export default async function HomePage() {
   return (
@@ -29,6 +30,7 @@ export default async function HomePage() {
           ))}
         </ul>
       </div>
+      <Head />
     </div>
   );
 }
