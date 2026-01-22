@@ -1,0 +1,52 @@
+---
+slug: intro
+title: Hey, I'm Deepanshu
+description: Building real-time communication infrastructure and tinkering with distributed systems
+date: 2026/1/22
+---
+
+Hi, I'm Deepanshu—a full-stack engineer passionate about WebRTC, real-time communication, and distributed systems.
+
+For the past 4.5 years, I worked at [Huddle01](https://huddle01.com) as the Founding and Lead Engineer. I led a development team of 10-12 engineers. During my time at Huddle01, we built:
+
+- **Scaled WebRTC & WebSocket Infrastructure**
+
+  Architected and implemented "Cascading," a horizontally partitioned WebRTC SFU topology inspired by database sharding. This enabled us to reliably support 10,000+ concurrent users per room with sub-100ms latency, significantly improving global latency and bandwidth efficiency.
+  Migrated from JSON to Protobufs, reducing message size by 60% and more than doubling throughput per WebSocket instance (we use [uWebSockets](https://github.com/uNetworking/uWebSockets.js))
+
+- **NFT indexing service**
+
+  Built an NFT indexer because [phantom](https://phantom.com) acquired [simplehash](https://simplehash.com) and shut it down. Used Rust to leverage memory safe multithreading and indexed and cached a few terabytes of NFTs in S3 bucket.
+
+- **Designed and developed various SDKs**
+
+  Architected frontend and backend SDKs for interacting with our real-time communication service with a nice easy to use DX and flexibility to mould it into any requirements.
+
+- **Architected recording service**
+
+  Developed a recording service using ffmpeg, puppeteer, xvfb, pulse audio, node.js and typescript, and deployed using kubernetes, which helped in auto-scaling pods whenever there was high load.
+
+- **Managed deployment pipeline**
+
+  Deployed services to bare metal servers to save costs and set up CI/CD pipeline to deploy on bare metal. Earlier used AWS to deploy service to lambda and fargate.
+
+- **Migrated from Monolith to Modular Architecture**
+
+  Led the transition from a tightly coupled monolithic system to a modular, event-driven architecture using gRPC. This allowed independent scaling, zero-downtime deployments, and clearer ownership, boosting developer productivity and operational stability as our engineering team grew.
+
+- **Led the team to build various client facing products**
+
+  Huddle01 meeting app, dashboards for managing meetings, chrome extension, gcal adons, node sales platform, [farhouse](https://house01.fun).
+
+## **Side Projects**
+
+- **Pingo** - [https://github.com/deepso7/pingo](https://github.com/deepso7/pingo)
+
+  A Rust library for peer-to-peer latency measurement using STUN and UDP hole punching. This helped me figure out a very basic idea on how I can calculate latency between 2 peers.
+
+- **Matrix** - [https://github.com/deepso7/matrix](https://github.com/deepso7/matrix)
+
+  Rust based lib/api for spinning up lightweight microVMs using [**Firecracker**](https://firecracker-microvm.github.io) or [**Cloud Hypervisor**](https://www.cloudhypervisor.org). This helped me understand how microVMs work and how easily I can spin up microVMs.
+
+Cheers,<br />
+Deepanshu
